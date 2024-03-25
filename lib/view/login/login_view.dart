@@ -4,6 +4,7 @@ import 'package:cicosy/common_widget/round_icon_button.dart';
 import 'package:cicosy/common_widget/round_textfield.dart';
 import 'package:cicosy/view/login/reset_password_view.dart';
 import 'package:cicosy/view/login/sign_up_view.dart';
+import 'package:cicosy/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -72,7 +73,14 @@ class _LoginViewState extends State<LoginView> {
                     height: 25,
                     ),
 
-                RoundButton(title: "Login", onPressed: () {}
+                RoundButton(title: "Login", onPressed: () {
+                  Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => const OnBoardingView()
+                      )
+                      );
+                }
                 ),
 
                 const SizedBox(
@@ -111,7 +119,11 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(
                     height: 30,
                     ),
-                    RoundIconButton(icon: "assets/img/facebook_logo.png",title:  "Login with Facebook" ,  color: const  Color(0xff367FC0), onPressed: () {}),
+                    RoundIconButton(
+                      icon: "assets/img/facebook_logo.png",
+                      title:  "Login with Facebook" ,
+                      color: const  Color(0xff367FC0),
+                      onPressed: () {}),
 
 
                     const SizedBox(
