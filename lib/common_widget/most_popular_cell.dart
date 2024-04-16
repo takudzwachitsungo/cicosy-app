@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class MostPopularCell extends StatelessWidget {
 
-  final Map cObj;
+  final Map mObj;
   final VoidCallback onTap;
 
-  const MostPopularCell({super.key, required this.cObj, required this.onTap});
+  const MostPopularCell({super.key, required this.mObj, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class MostPopularCell extends StatelessWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.asset(
-                                                      cObj["image"].toString(),
+                                                      mObj["image"].toString(),
                                                       width: 220, 
                                                       height: 110,
                                                       fit: BoxFit.cover,
@@ -32,7 +32,7 @@ class MostPopularCell extends StatelessWidget {
                               ),
                         
                       Text(
-                        cObj["name"],
+                        mObj["name"],
                         textAlign: TextAlign.center,
                         style: TextStyle(
                         color: TColor.primaryText, 
@@ -49,7 +49,7 @@ class MostPopularCell extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            cObj["type"],
+                            mObj["type"],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                             color: TColor.secondaryText, 
@@ -68,13 +68,19 @@ class MostPopularCell extends StatelessWidget {
                             ),
 
                             Text(
-                            cObj["location"],
+                            mObj["location"],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                             color: TColor.secondaryText, 
                             fontSize: 12, 
                             ),
                             ),
+
+                            
+                                     const SizedBox(
+                                      width: 8,
+                                      ),
+                              
 
                             Image.asset(
                                                       "assets/img/rate.png",
@@ -83,8 +89,14 @@ class MostPopularCell extends StatelessWidget {
                                                       fit: BoxFit.cover,
                                                       ),
 
+                                  
+                                     const SizedBox(
+                                      width: 4,
+                                      ),
+                              
+
                              Text(
-                            cObj["rate"],
+                            mObj["rate"],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                             color: TColor.primary, 

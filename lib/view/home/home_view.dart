@@ -1,6 +1,8 @@
 import 'package:cicosy/common/color_extension.dart';
 import 'package:cicosy/common_widget/category_cell.dart';
 import 'package:cicosy/common_widget/most_popular_cell.dart';
+import 'package:cicosy/common_widget/popular_distributors_row.dart';
+import 'package:cicosy/common_widget/recent_item_row.dart';
 import 'package:cicosy/common_widget/round_textfield.dart';
 import 'package:cicosy/common_widget/view_all_title_row.dart';
 import 'package:flutter/material.dart';
@@ -233,6 +235,19 @@ class _HomeViewState extends State<HomeView> {
                 } ,)          
               ),
 
+               ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    itemCount: popArr.length,
+                    itemBuilder: ((context, index) {
+                      var pObj = popArr[index] as Map? ??{};
+                    return PopularDistributorsRow(
+                      pObj: pObj, 
+                      onTap:() {} ,
+                      );
+                  })),
+
                 Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child:
@@ -240,9 +255,10 @@ class _HomeViewState extends State<HomeView> {
 
                 } ,)          
               ),
+                 
 
                  SizedBox(
-                  height: 160,
+                  height: 180,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -250,7 +266,7 @@ class _HomeViewState extends State<HomeView> {
                     itemBuilder: ((context, index) {
                       var mObj = popArr[index] as Map? ??{};
                     return MostPopularCell(
-                      cObj: mObj, 
+                      mObj: mObj, 
                       onTap:() {} ,
                       );
                   })),
@@ -263,6 +279,19 @@ class _HomeViewState extends State<HomeView> {
 
                 } ,)          
               ),
+
+              ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    itemCount: recentArr.length,
+                    itemBuilder: ((context, index) {
+                      var mObj = recentArr[index] as Map? ??{};
+                    return RecentItemRow(
+                      rObj: mObj, 
+                      onTap:() {} ,
+                      );
+                  })),
             ],
             ),
           ),
