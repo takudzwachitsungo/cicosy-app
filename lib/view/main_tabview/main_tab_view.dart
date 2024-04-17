@@ -1,5 +1,6 @@
 import 'package:cicosy/common/color_extension.dart';
 import 'package:cicosy/common_widget/tab_button.dart';
+import 'package:cicosy/menu/menu_view.dart';
 import 'package:cicosy/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -70,7 +71,7 @@ class _MainTabViewState extends State<MainTabView> {
               onTap: () {
                 if(selctTab != 0){
                   selctTab = 0;
-                  selectPageView = Container();
+                  selectPageView = const MenuView();
                 }
                 if(mounted){
                   setState(() {
